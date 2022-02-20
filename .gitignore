@@ -14,3 +14,5 @@ yarn-error.log
 /.idea
 /.vscode
 Disam 20-02-2022.zip
+vendor
+node_modules
