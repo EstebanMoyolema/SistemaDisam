@@ -1,4 +1,13 @@
-{{-- Titulo de la pagina --}}
+@extends('adminlte::page')
+@section('content_header')
+    <h1>Administrador</h1>
+@stop
+@section('content')
+    <p>Welcome to this beautiful admin panel.</p>
+@stop
+{{-- Titulo de la pagina -- }}
+@section('title', 'Administrador')
+{{-- Titulo de la pagina
 @section('titlePage','Administrador')
 @section('opcionesMenu')
 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
@@ -23,4 +32,4 @@
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-app-layout> --}}
