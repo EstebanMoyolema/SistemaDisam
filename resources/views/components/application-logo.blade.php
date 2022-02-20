@@ -1,4 +1,4 @@
-<svg width="140px" height="100px" viewBox="0 0 1136 346" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<svg width="150px" height="50px" viewBox="0 0 1136 346" version="1.1" xmlns="http://www.w3.org/2000/svg">
     <g id="#ffffffff">
     </g>
     <g id="#1360D1">
