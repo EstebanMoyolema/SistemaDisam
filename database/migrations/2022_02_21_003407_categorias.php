@@ -21,6 +21,8 @@ class Categorias extends Migration
 
             $table->bigIncrements('cat_ID');
             $table->string('cat_Nombre');
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
         });
     }
 

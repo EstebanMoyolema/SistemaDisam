@@ -21,6 +21,8 @@ class Rutas extends Migration
 
             $table->bigIncrements('rut_ID');
             $table->string('rut_Nombre');
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
         });
     }
 

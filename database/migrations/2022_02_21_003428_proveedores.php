@@ -30,6 +30,8 @@ class Proveedores extends Migration
             $table->string('prov_RUC');
             $table->string('prov_Observacion')->nullable();
             $table->boolean('prov_Activo');
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
         });
     }
 

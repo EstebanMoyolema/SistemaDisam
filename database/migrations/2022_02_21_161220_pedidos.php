@@ -23,7 +23,8 @@ class Pedidos extends Migration
             $table->date('ped_FechaPedido');
             $table->float('ped_SubTotal',4,2);
             $table->float('ped_Total',4,2);
-            $table->timestamps();
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
 
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('cliente_ID')->unsigned();

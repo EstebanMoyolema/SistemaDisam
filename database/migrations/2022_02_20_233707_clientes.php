@@ -28,6 +28,7 @@ class Clientes extends Migration
             $table->string('cli_Direccion')->nullable();
             $table->string('cli_NombreComercial');
             $table->string('cli_Email')->nullable();
+            $table->dateTime('updated_at');
             $table->dateTime('created_at');
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('rutas_ID')->unsigned();

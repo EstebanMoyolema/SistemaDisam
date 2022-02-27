@@ -31,7 +31,8 @@ class Productos extends Migration
             $table->boolean('pro_Descontinuado')->nullable();
             $table->binary('pro_Imagen')->nullable();
             $table->decimal('pro_Vendido',4,0)->nullable();
-            $table->timestamps();
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
 
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('categoria_ID')->unsigned();
