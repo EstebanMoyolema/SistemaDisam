@@ -19,18 +19,19 @@ DISAM | Productos
         @endsection
     </x-slot>
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-7">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12"> 
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Producto') }}
+                                {{ __('Listado de Productos') }}
                             </span>
 
                              <div class="float-right">
@@ -49,26 +50,26 @@ DISAM | Productos
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead">
+                                <thead class="thead-dark">
                                     <tr>
-                                        <th>No</th>
+                                        <th scope="col">No</th>
                                         
-										<th hidden="true">Pro Id</th>
-										<th>Nombre</th>
-										<th>Descripcion</th>
-										<th>Peso</th>
-										<th>Precio de Compra</th>
-										<th>Fecha Elaboracion</th>
-										<th>Fecha Expiracion</th>
-										<th>Precio de Venta</th>
-										<th>Stock</th>
-										<th>Descontinuado</th>
+										<th style="display:none;">Pro Id</th>
+										<th scope="col"Nombre</th>
+										<th scope="col">Descripcion</th>
+										<th scope="col">Peso</th>
+										<th scope="col">Precio de Compra</th>
+										<th scope="col">Fecha Elaboracion</th>
+										<th scope="col">Fecha Expiracion</th>
+										<th scope="col">Precio de Venta</th>
+										<th scope="col">Stock</th>
+										<th scope="col">Descontinuado</th>
 										<th hidden="true">Pro Imagen</th>
-										<th>Vendido</th>
-										<th>Categoria</th>
-										<th>Proveedor</th>
+										<th scope="col">Vendido</th>
+										<th scope="col">Categoria</th>
+										<th scope="col">Proveedor</th>
 
-                                        <th>Acciones</th>
+                                        <th scope="col">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -76,7 +77,7 @@ DISAM | Productos
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden="true">{{ $producto->pro_ID }}</td>
+											<td style="display:none;">{{ $producto->pro_ID }}</td>
 											<td>{{ $producto->pro_Nombre }}</td>
 											<td>{{ $producto->pro_Descripcion }}</td>
 											<td>{{ $producto->pro_Peso }}</td>
@@ -92,13 +93,13 @@ DISAM | Productos
 											<td>{{ $producto->proveedores->prov_Nombre }}</td>
 
                                             <td>
-                                                {{-- <form action="{{ route('producto.destroy',$producto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('productos.index',$producto->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.index',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.index',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form> --}}
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach

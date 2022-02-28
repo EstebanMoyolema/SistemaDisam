@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Categoria $categoria
  * @property Pedido[] $pedidos
- * @property Proveedore $proveedore
+ * @property Proveedores $proveedores
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */

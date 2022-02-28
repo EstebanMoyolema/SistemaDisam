@@ -83,15 +83,15 @@ DISAM | Clientes
 											<td>{{ $cliente->cli_Email }}</td>
 											<td>{{ $cliente->ruta->rut_Nombre}}</td>
 
-                                            {{-- <td>
-                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                            <td>
+                                                <form action="{{ route('clientes.index',$cliente->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.index',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.index',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

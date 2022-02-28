@@ -6,7 +6,7 @@ use App\Models\Proveedores;
 use Illuminate\Http\Request;
 
 /**
- * Class ProveedoreController
+ * Class ProveedoresController
  * @package App\Http\Controllers
  */
 class ProveedoresController extends Controller
@@ -91,7 +91,7 @@ class ProveedoresController extends Controller
         $proveedores->update($request->all());
 
         return redirect()->route('proveedores.index')
-            ->with('success', 'Proveedore updated successfully');
+            ->with('success', 'Proveedores updated successfully');
     }
 
     /**
@@ -104,6 +104,6 @@ class ProveedoresController extends Controller
         $proveedores = Proveedores::find($id)->delete();
 
         return redirect()->route('proveedores.index')
-            ->with('success', 'Proveedore deleted successfully');
+            ->with('success', 'Proveedores deleted successfully');
     }
 }

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Proveedore
+ * Class Proveedores
  *
  * @property $prov_ID
  * @property $prov_Nombre
