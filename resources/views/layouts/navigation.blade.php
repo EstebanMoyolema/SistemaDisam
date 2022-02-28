@@ -15,8 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @yield('opcionesMenu')
                 </div>
-                @yield('opcionesMenu')
             </div>
 
             <!-- Settings Dropdown -->

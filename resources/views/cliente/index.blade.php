@@ -1,9 +1,3 @@
-@extends('adminlte::page')
-@section('content_header')
-    <h1>Creación de Clientes</h1>
-@stop
-@section('content')
-    <p>Clientes</p>
 
     <div class="container-fluid">
         <div class="row">
@@ -55,7 +49,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden>{{ $cliente->cli_ID }}</td>
+											<td>{{ $cliente->cli_ID }}</td>
 											<td>{{ $cliente->cli_TipoDocumento }}</td>
 											<td>{{ $cliente->cli_NoDocumento }}</td>
 											<td>{{ $cliente->cli_Nombre }}</td>
@@ -86,4 +80,3 @@
             </div>
         </div>
     </div>
-@stop

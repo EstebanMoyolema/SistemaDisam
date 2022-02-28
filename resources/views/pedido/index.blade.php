@@ -1,9 +1,3 @@
-@extends('adminlte::page')
-@section('content_header')
-    <h1>Creación de Clientes</h1>
-@stop
-@section('content')
-    <p>Clientes</p>
 
     <div class="container-fluid">
         <div class="row">
@@ -13,11 +7,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Cliente') }}
+                                {{ __('Pedido') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('pedidos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,45 +30,37 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cli Id</th>
-										<th>Cli Tipodocumento</th>
-										<th>Cli Nodocumento</th>
-										<th>Cli Nombre</th>
-										<th>Cli Apellido</th>
-										<th>Cli Telefono</th>
-										<th>Cli Direccion</th>
-										<th>Cli Nombrecomercial</th>
-										<th>Cli Email</th>
-										<th>Rutas Id</th>
+										<th>Ped Id</th>
+										<th>Ped Fechapedido</th>
+										<th>Ped Subtotal</th>
+										<th>Ped Total</th>
+										<th>Cliente Id</th>
+										<th>Producto Id</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($pedidos as $pedido)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden>{{ $cliente->cli_ID }}</td>
-											<td>{{ $cliente->cli_TipoDocumento }}</td>
-											<td>{{ $cliente->cli_NoDocumento }}</td>
-											<td>{{ $cliente->cli_Nombre }}</td>
-											<td>{{ $cliente->cli_Apellido }}</td>
-											<td>{{ $cliente->cli_Telefono }}</td>
-											<td>{{ $cliente->cli_Direccion }}</td>
-											<td>{{ $cliente->cli_NombreComercial }}</td>
-											<td>{{ $cliente->cli_Email }}</td>
-											<td>{{ $cliente->ruta->rut_Nombre}}</td>
+											<td>{{ $pedido->ped_ID }}</td>
+											<td>{{ $pedido->ped_FechaPedido }}</td>
+											<td>{{ $pedido->ped_SubTotal }}</td>
+											<td>{{ $pedido->ped_Total }}</td>
+											<td>{{ $pedido->cliente_ID }}</td>
+											<td>{{ $pedido->producto_ID }}</td>
 
-                                            {{-- <td>
-                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                            <td>
+                                                <form action="{{ route('pedidos.destroy',$pedido->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('pedidos.show',$pedido->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('pedidos.edit',$pedido->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -82,8 +68,8 @@
                         </div>
                     </div>
                 </div>
-                {!! $clientes->links() !!}
+                {!! $pedidos->links() !!}
             </div>
         </div>
     </div>
-@stop
+

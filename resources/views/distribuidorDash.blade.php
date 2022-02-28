@@ -6,6 +6,17 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
         </h2>
+        @section('opcionesMenu')
+        <x-nav-link :href="route('rutas.index')" :active="request()->routeIs('rutas')">
+            {{ __('Rutas') }}
+        </x-nav-link>
+        <x-nav-link :href="route('clientes.index')" :active="request()->routeIs('clientes')">
+            {{ __('Clientes') }}
+        </x-nav-link>
+        <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos')">
+            {{ __('Pedidos') }}
+        </x-nav-link>
+        @endsection
     </x-slot>
 
     <div class="py-12">
