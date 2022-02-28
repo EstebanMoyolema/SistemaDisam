@@ -267,12 +267,12 @@ return [
                 [
                     'text'    => 'Rutas',
                     'icon'    => 'fas fa-regular fa-route',
-                    'route'  => 'admin.rutasDash',
+                    'url'  => '/dashboard/admin/rutas',
                 ],
                 [
                     'text'    => 'Clientes',
                     'icon'    => 'fas fa-solid fa-users',
-                    'route'  => 'admin.clienteDash',
+                    'url'  => '/dashboard/admin/cliente',
                 ],
                 [
                     'text'    => 'Productos',
