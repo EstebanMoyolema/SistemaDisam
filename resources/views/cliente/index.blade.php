@@ -1,4 +1,27 @@
-
+@section('titlePage')
+DISAM | Clientes
+@endsection
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        @section('opcionesMenu')
+        <x-nav-link :href="route('rutas.index')" :active="request()->routeIs('rutas')">
+            {{ __('Rutas') }}
+        </x-nav-link>
+        <x-nav-link :href="route('clientes.index')" :active="request()->routeIs('clientes')">
+            {{ __('Clientes') }}
+        </x-nav-link>
+        <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos')">
+            {{ __('Pedidos') }}
+        </x-nav-link>
+        @endsection
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -28,9 +51,9 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th hidden="true">No</th>
                                         
-										<th>Cli Id</th>
+										<th hidden="true">Cli Id</th>
 										<th>Cli Tipodocumento</th>
 										<th>Cli Nodocumento</th>
 										<th>Cli Nombre</th>
@@ -47,9 +70,9 @@
                                 <tbody>
                                     @foreach ($clientes as $cliente)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td hidden="true">{{ ++$i }}</td>
                                             
-											<td>{{ $cliente->cli_ID }}</td>
+											<td hidden="true">{{ $cliente->cli_ID }}</td>
 											<td>{{ $cliente->cli_TipoDocumento }}</td>
 											<td>{{ $cliente->cli_NoDocumento }}</td>
 											<td>{{ $cliente->cli_Nombre }}</td>
@@ -80,3 +103,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
+</x-app-layout>

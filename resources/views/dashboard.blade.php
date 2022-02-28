@@ -1,5 +1,5 @@
 {{-- Titulo de la pagina --}}
-@section('titlePage','Dashboard')
+@section('titlePage','DISAM')
 
 
 <x-app-layout>

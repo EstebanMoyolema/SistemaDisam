@@ -1,4 +1,27 @@
-
+@section('titlePage')
+DISAM | Productos
+@endsection
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        @section('opcionesMenu')
+        <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos')">
+            {{ __('Productos') }}
+        </x-nav-link>
+        <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias')">
+            {{ __('Categorias') }}
+        </x-nav-link>
+        <x-nav-link :href="route('proveedores.index')" :active="request()->routeIs('proveedores')">
+            {{ __('Proveedores') }}
+        </x-nav-link>
+        @endsection
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -28,9 +51,9 @@
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th hidden="true">No</th>
                                         
-										<th>Pro Id</th>
+										<th hidden="true">Pro Id</th>
 										<th>Pro Nombre</th>
 										<th>Pro Descripcion</th>
 										<th>Pro Peso</th>
@@ -40,7 +63,7 @@
 										<th>Pro Precioventa</th>
 										<th>Pro Stock</th>
 										<th>Pro Descontinuado</th>
-										<th>Pro Imagen</th>
+										<th hidden="true">Pro Imagen</th>
 										<th>Pro Vendido</th>
 										<th>Categoria Id</th>
 										<th>Proveedor Id</th>
@@ -51,9 +74,9 @@
                                 <tbody>
                                     @foreach ($productos as $producto)
                                         <tr>
-                                            <td>{{ ++$i }}</td>
+                                            <td hidden="true">{{ ++$i }}</td>
                                             
-											<td>{{ $producto->pro_ID }}</td>
+											<td hidden="true">{{ $producto->pro_ID }}</td>
 											<td>{{ $producto->pro_Nombre }}</td>
 											<td>{{ $producto->pro_Descripcion }}</td>
 											<td>{{ $producto->pro_Peso }}</td>
@@ -63,7 +86,7 @@
 											<td>{{ $producto->pro_PrecioVenta }}</td>
 											<td>{{ $producto->pro_Stock }}</td>
 											<td>{{ $producto->pro_Descontinuado }}</td>
-											<td>{{ $producto->pro_Imagen }}</td>
+											<td hidden="true">{{ $producto->pro_Imagen }}</td>
 											<td>{{ $producto->pro_Vendido }}</td>
 											<td>{{ $producto->categoria_ID }}</td>
 											<td>{{ $producto->proveedor_ID }}</td>
@@ -88,3 +111,8 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
+</div>
+</x-app-layout>
