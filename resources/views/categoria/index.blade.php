@@ -53,8 +53,8 @@ DISAM | Categorias
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cat Id</th>
-										<th>Cat Nombre</th>
+										<th hidden="true">Cat Id</th>
+										<th>Nombre de la categoria</th>
 
                                         <th></th>
                                     </tr>
@@ -64,7 +64,7 @@ DISAM | Categorias
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $categoria->cat_ID }}</td>
+											<td hidden="true">{{ $categoria->cat_ID }}</td>
 											<td>{{ $categoria->cat_Nombre }}</td>
 
                                             <td>

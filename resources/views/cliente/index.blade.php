@@ -51,18 +51,18 @@ DISAM | Clientes
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th hidden="true">No</th>
+                                        <th>No</th>
                                         
 										<th hidden="true">Cli Id</th>
-										<th>Cli Tipodocumento</th>
-										<th>Cli Nodocumento</th>
-										<th>Cli Nombre</th>
-										<th>Cli Apellido</th>
-										<th>Cli Telefono</th>
-										<th>Cli Direccion</th>
-										<th>Cli Nombrecomercial</th>
-										<th>Cli Email</th>
-										<th>Rutas Id</th>
+										<th>Tipo Documento</th>
+										<th># Documento</th>
+										<th>Nombre</th>
+										<th>Apellido</th>
+										<th>Telefono</th>
+										<th>Direccion</th>
+										<th>Nombre Comercial</th>
+										<th>Email</th>
+										<th>Ruta</th>
 
                                         <th></th>
                                     </tr>
@@ -70,7 +70,7 @@ DISAM | Clientes
                                 <tbody>
                                     @foreach ($clientes as $cliente)
                                         <tr>
-                                            <td hidden="true">{{ ++$i }}</td>
+                                            <td>{{ ++$i }}</td>
                                             
 											<td hidden="true">{{ $cliente->cli_ID }}</td>
 											<td>{{ $cliente->cli_TipoDocumento }}</td>

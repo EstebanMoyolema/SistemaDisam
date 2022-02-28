@@ -53,17 +53,17 @@ DISAM | Proveedores
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Prov Id</th>
-										<th>Prov Nombre</th>
-										<th>Prov Nombrerepresentante</th>
-										<th>Prov Direccion</th>
-										<th>Prov Email</th>
-										<th>Prov Telefono</th>
-										<th>Prov Telefono2</th>
-										<th>Prov Telefono3</th>
-										<th>Prov Ruc</th>
-										<th>Prov Observacion</th>
-										<th>Prov Activo</th>
+										<th hidden="true">Prov Id</th>
+										<th>Nombre</th>
+										<th>Representante</th>
+										<th>Direccion</th>
+										<th>Email</th>
+										<th>Telefono</th>
+										<th>Telefono2</th>
+										<th>Telefono3</th>
+										<th>Ruc</th>
+										<th>Observacion</th>
+										<th>Activo</th>
 
                                         <th></th>
                                     </tr>
@@ -73,7 +73,7 @@ DISAM | Proveedores
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $proveedor->prov_ID }}</td>
+											<td hidden="true">{{ $proveedor->prov_ID }}</td>
 											<td>{{ $proveedor->prov_Nombre }}</td>
 											<td>{{ $proveedor->prov_NombreRepresentante }}</td>
 											<td>{{ $proveedor->prov_Direccion }}</td>

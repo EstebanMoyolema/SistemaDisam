@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('prov_Email') }}
-            {{ Form::text('prov_Email', $proveedores->prov_Email, ['class' => 'form-control' . ($errors->has('prov_Email') ? ' is-invalid' : ''), 'placeholder' => 'Prov Email']) }}
+            {{ Form::email('prov_Email', $proveedores->prov_Email, ['class' => 'form-control' . ($errors->has('prov_Email') ? ' is-invalid' : ''), 'placeholder' => 'Prov Email']) }}
             {!! $errors->first('prov_Email', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -53,7 +53,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('prov_Activo') }}
-            {{ Form::text('prov_Activo', $proveedores->prov_Activo, ['class' => 'form-control' . ($errors->has('prov_Activo') ? ' is-invalid' : ''), 'placeholder' => 'Prov Activo']) }}
+            {{ Form::checkbox('prov_Activo', $proveedores->prov_Activo, ['class' => 'form-control' . ($errors->has('prov_Activo') ? ' is-invalid' : ''), 'placeholder' => 'Prov Activo']) }}
             {!! $errors->first('prov_Activo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

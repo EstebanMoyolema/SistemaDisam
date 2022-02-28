@@ -51,30 +51,30 @@ DISAM | Productos
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th hidden="true">No</th>
+                                        <th>No</th>
                                         
 										<th hidden="true">Pro Id</th>
-										<th>Pro Nombre</th>
-										<th>Pro Descripcion</th>
-										<th>Pro Peso</th>
-										<th>Pro Preciocompra</th>
-										<th>Pro Fechaelaboracion</th>
-										<th>Pro Fechaexpiracion</th>
-										<th>Pro Precioventa</th>
-										<th>Pro Stock</th>
-										<th>Pro Descontinuado</th>
+										<th>Nombre</th>
+										<th>Descripcion</th>
+										<th>Peso</th>
+										<th>Precio de Compra</th>
+										<th>Fecha Elaboracion</th>
+										<th>Fecha Expiracion</th>
+										<th>Precio de Venta</th>
+										<th>Stock</th>
+										<th>Descontinuado</th>
 										<th hidden="true">Pro Imagen</th>
-										<th>Pro Vendido</th>
-										<th>Categoria Id</th>
-										<th>Proveedor Id</th>
+										<th>Vendido</th>
+										<th>Categoria</th>
+										<th>Proveedor</th>
 
-                                        <th></th>
+                                        <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($productos as $producto)
                                         <tr>
-                                            <td hidden="true">{{ ++$i }}</td>
+                                            <td>{{ ++$i }}</td>
                                             
 											<td hidden="true">{{ $producto->pro_ID }}</td>
 											<td>{{ $producto->pro_Nombre }}</td>
@@ -88,17 +88,17 @@ DISAM | Productos
 											<td>{{ $producto->pro_Descontinuado }}</td>
 											<td hidden="true">{{ $producto->pro_Imagen }}</td>
 											<td>{{ $producto->pro_Vendido }}</td>
-											<td>{{ $producto->categoria_ID }}</td>
-											<td>{{ $producto->proveedor_ID }}</td>
+											<td>{{ $producto->categoria->cat_Nombre }}</td>
+											<td>{{ $producto->proveedores->prov_Nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
+                                                {{-- <form action="{{ route('producto.destroy',$producto->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
-                                                </form>
+                                                </form> --}}
                                             </td>
                                         </tr>
                                     @endforeach

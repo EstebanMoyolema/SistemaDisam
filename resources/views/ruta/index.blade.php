@@ -53,8 +53,8 @@ DISAM | Rutas
                                             <tr>
                                                 <th>No</th>
                                                 
-                                                <th>Rut Id</th>
-                                                <th>Rut Nombre</th>
+                                                <th hidden="true">Rut Id</th>
+                                                <th>Nombre de la ruta</th>
 
                                                 <th></th>
                                             </tr>
@@ -64,7 +64,7 @@ DISAM | Rutas
                                                 <tr>
                                                     <td>{{ ++$i }}</td>
                                                     
-                                                    <td>{{ $ruta->rut_ID }}</td>
+                                                    <td hidden="true">{{ $ruta->rut_ID }}</td>
                                                     <td>{{ $ruta->rut_Nombre }}</td>
 
                                                     <td>

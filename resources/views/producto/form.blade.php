@@ -28,12 +28,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('pro_FechaElaboracion') }}
-            {{ Form::text('pro_FechaElaboracion', $producto->pro_FechaElaboracion, ['class' => 'form-control' . ($errors->has('pro_FechaElaboracion') ? ' is-invalid' : ''), 'placeholder' => 'Pro Fechaelaboracion']) }}
+            {{ Form::date('pro_FechaElaboracion', $producto->pro_FechaElaboracion, ['class' => 'form-control' . ($errors->has('pro_FechaElaboracion') ? ' is-invalid' : ''), 'placeholder' => 'Pro Fechaelaboracion']) }}
             {!! $errors->first('pro_FechaElaboracion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('pro_FechaExpiracion') }}
-            {{ Form::text('pro_FechaExpiracion', $producto->pro_FechaExpiracion, ['class' => 'form-control' . ($errors->has('pro_FechaExpiracion') ? ' is-invalid' : ''), 'placeholder' => 'Pro Fechaexpiracion']) }}
+            {{ Form::date('pro_FechaExpiracion', $producto->pro_FechaExpiracion, ['class' => 'form-control' . ($errors->has('pro_FechaExpiracion') ? ' is-invalid' : ''), 'placeholder' => 'Pro Fechaexpiracion']) }}
             {!! $errors->first('pro_FechaExpiracion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -48,7 +48,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('pro_Descontinuado') }}
-            {{ Form::text('pro_Descontinuado', $producto->pro_Descontinuado, ['class' => 'form-control' . ($errors->has('pro_Descontinuado') ? ' is-invalid' : ''), 'placeholder' => 'Pro Descontinuado']) }}
+            {{ Form::checkbox('pro_Descontinuado', $producto->pro_Descontinuado, ['class' => 'form-control' . ($errors->has('pro_Descontinuado') ? ' is-invalid' : ''), 'placeholder' => 'Pro Descontinuado']) }}
             {!! $errors->first('pro_Descontinuado', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -63,12 +63,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('categoria_ID') }}
-            {{ Form::text('categoria_ID', $producto->categoria_ID, ['class' => 'form-control' . ($errors->has('categoria_ID') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
+            {{ Form::select('categoria_ID', $categoria ,$producto->categoria_ID, ['class' => 'form-control' . ($errors->has('categoria_ID') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
             {!! $errors->first('categoria_ID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('proveedor_ID') }}
-            {{ Form::text('proveedor_ID', $producto->proveedor_ID, ['class' => 'form-control' . ($errors->has('proveedor_ID') ? ' is-invalid' : ''), 'placeholder' => 'Proveedor Id']) }}
+            {{ Form::select('proveedor_ID', $proveedor , $producto->proveedor_ID, ['class' => 'form-control' . ($errors->has('proveedor_ID') ? ' is-invalid' : ''), 'placeholder' => 'Proveedor Id']) }}
             {!! $errors->first('proveedor_ID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
