@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Producto;
+use App\Models\Proveedores;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ProductoController extends Controller
     public function create()
     {
         $producto = new Producto();
-        return view('producto.create', compact('producto'));
+        $categoria = Categoria::pluck('cat_Nombre','cat_ID');
+        $proveedor = Proveedores::pluck('prov_Nombre','prov_ID');
+        return view('producto.create', compact('producto','categoria','proveedor'));
     }
 
     /**
@@ -73,8 +77,9 @@ class ProductoController extends Controller
     public function edit($id)
     {
         $producto = Producto::find($id);
-
-        return view('producto.edit', compact('producto'));
+        $categoria = Categoria::pluck('cat_Nombre','cat_ID');
+        $proveedor = Proveedores::pluck('prov_Nombre','prov_ID');
+        return view('producto.edit', compact('producto','categoria','proveedor'));
     }
 
     /**

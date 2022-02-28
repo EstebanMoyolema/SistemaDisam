@@ -70,9 +70,9 @@ class Producto extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function proveedore()
+    public function proveedores()
     {
-        return $this->hasOne('App\Models\Proveedore', 'prov_ID', 'proveedor_ID');
+        return $this->hasOne('App\Models\Proveedores', 'prov_ID', 'proveedor_ID');
     }
     
 
