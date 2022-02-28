@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use App\Models\Ruta;
+use App\Models\Cliente;
 
 class DashboardController extends Controller
 {
@@ -28,12 +29,18 @@ class DashboardController extends Controller
         return view('auth.register');
     }
     //Redireccion para registrar rutas desde el admin
-    public function rutas(){
-        return view('admin.rutasDash');
+    public function rutasIndex(){
+        $rutas = Ruta::paginate();
+
+        return view('admin.rutasDash', compact('rutas'))
+            ->with('i', (request()->input('page', 1) - 1) * $rutas->perPage());
     }
     //Redireccion para registrar rutas desde el admin
-    public function clientes(){
-        return view('admin.clienteDash');
+    public function clientesIndex(){
+        $clientes = Cliente::paginate();
+
+        return view('admin.clienteDash', compact('clientes'))
+            ->with('i', (request()->input('page', 1) - 1) * $clientes->perPage());
     }
     //Redireccion para registrar categorias de productos desde el admin
     public function catProductos(){
