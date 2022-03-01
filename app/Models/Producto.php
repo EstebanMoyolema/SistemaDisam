@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Producto
  *
- * @property $pro_ID
+ * @property $id
  * @property $pro_Nombre
  * @property $pro_Descripcion
  * @property $pro_Peso
@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Categoria $categoria
  * @property Pedido[] $pedidos
- * @property Proveedores $proveedores
+ * @property Proveedore $proveedore
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -34,7 +34,6 @@ class Producto extends Model
 {
     
     static $rules = [
-		'pro_ID' => 'required',
 		'pro_Nombre' => 'required',
 		'pro_PrecioCompra' => 'required',
 		'categoria_ID' => 'required',
@@ -48,7 +47,7 @@ class Producto extends Model
      *
      * @var array
      */
-    protected $fillable = ['pro_ID','pro_Nombre','pro_Descripcion','pro_Peso','pro_PrecioCompra','pro_FechaElaboracion','pro_FechaExpiracion','pro_PrecioVenta','pro_Stock','pro_Descontinuado','pro_Imagen','pro_Vendido','categoria_ID','proveedor_ID'];
+    protected $fillable = ['pro_Nombre','pro_Descripcion','pro_Peso','pro_PrecioCompra','pro_FechaElaboracion','pro_FechaExpiracion','pro_PrecioVenta','pro_Stock','pro_Descontinuado','pro_Imagen','pro_Vendido','categoria_ID','proveedor_ID'];
 
 
     /**
@@ -56,7 +55,7 @@ class Producto extends Model
      */
     public function categoria()
     {
-        return $this->hasOne('App\Models\Categoria', 'cat_ID', 'categoria_ID');
+        return $this->hasOne('App\Models\Categoria', 'id', 'categoria_ID');
     }
     
     /**
@@ -64,15 +63,15 @@ class Producto extends Model
      */
     public function pedidos()
     {
-        return $this->hasMany('App\Models\Pedido', 'producto_ID', 'pro_ID');
+        return $this->hasMany('App\Models\Pedido', 'producto_ID', 'id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function proveedores()
+    public function proveedore()
     {
-        return $this->hasOne('App\Models\Proveedores', 'prov_ID', 'proveedor_ID');
+        return $this->hasOne('App\Models\Proveedore', 'id', 'proveedor_ID');
     }
     
 

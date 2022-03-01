@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Pedido
  *
- * @property $ped_ID
+ * @property $id
  * @property $ped_FechaPedido
  * @property $ped_SubTotal
  * @property $ped_Total
@@ -25,7 +25,6 @@ class Pedido extends Model
 {
     
     static $rules = [
-		'ped_ID' => 'required',
 		'ped_FechaPedido' => 'required',
 		'ped_SubTotal' => 'required',
 		'ped_Total' => 'required',
@@ -40,7 +39,7 @@ class Pedido extends Model
      *
      * @var array
      */
-    protected $fillable = ['ped_ID','ped_FechaPedido','ped_SubTotal','ped_Total','cliente_ID','producto_ID'];
+    protected $fillable = ['ped_FechaPedido','ped_SubTotal','ped_Total','cliente_ID','producto_ID'];
 
 
     /**
@@ -48,7 +47,7 @@ class Pedido extends Model
      */
     public function cliente()
     {
-        return $this->hasOne('App\Models\Cliente', 'cli_ID', 'cliente_ID');
+        return $this->hasOne('App\Models\Cliente', 'id', 'cliente_ID');
     }
     
     /**
@@ -56,7 +55,7 @@ class Pedido extends Model
      */
     public function producto()
     {
-        return $this->hasOne('App\Models\Producto', 'pro_ID', 'producto_ID');
+        return $this->hasOne('App\Models\Producto', 'id', 'producto_ID');
     }
     
 

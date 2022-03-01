@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Cliente
  *
- * @property $cli_ID
+ * @property $id
  * @property $cli_TipoDocumento
  * @property $cli_NoDocumento
  * @property $cli_Nombre
@@ -29,7 +29,6 @@ class Cliente extends Model
 {
     
     static $rules = [
-		'cli_ID' => 'required',
 		'cli_TipoDocumento' => 'required',
 		'cli_NoDocumento' => 'required',
 		'cli_Nombre' => 'required',
@@ -44,7 +43,7 @@ class Cliente extends Model
      *
      * @var array
      */
-    protected $fillable = ['cli_ID','cli_TipoDocumento','cli_NoDocumento','cli_Nombre','cli_Apellido','cli_Telefono','cli_Direccion','cli_NombreComercial','cli_Email','rutas_ID'];
+    protected $fillable = ['cli_TipoDocumento','cli_NoDocumento','cli_Nombre','cli_Apellido','cli_Telefono','cli_Direccion','cli_NombreComercial','cli_Email','rutas_ID'];
 
 
     /**
@@ -52,7 +51,7 @@ class Cliente extends Model
      */
     public function pedidos()
     {
-        return $this->hasMany('App\Models\Pedido', 'cliente_ID', 'cli_ID');
+        return $this->hasMany('App\Models\Pedido', 'cliente_ID', 'id');
     }
     
     /**
@@ -60,7 +59,7 @@ class Cliente extends Model
      */
     public function ruta()
     {
-        return $this->hasOne('App\Models\Ruta', 'rut_ID', 'rutas_ID');
+        return $this->hasOne('App\Models\Ruta', 'id', 'rutas_ID');
     }
     
 

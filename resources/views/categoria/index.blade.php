@@ -53,8 +53,7 @@ DISAM | Categorias
                                     <tr>
                                         <th>No</th>
                                         
-										<th hidden="true">Cat Id</th>
-										<th>Nombre de la categoria</th>
+										<th>Cat Nombre</th>
 
                                         <th></th>
                                     </tr>
@@ -64,15 +63,14 @@ DISAM | Categorias
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden="true">{{ $categoria->cat_ID }}</td>
 											<td>{{ $categoria->cat_Nombre }}</td>
 
                                             <td>
-                                                <a class="btn btn-sm btn-primary " href="{{ route('categorias.index',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('categorias.index',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
-                                                <form action="{{ url('/dashboard/categorias/'.$categoria->id) }}" method="POST" class="d-inline">
+                                                <form action="{{ route('categorias.destroy',$categoria->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('categorias.show',$categoria->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('categorias.edit',$categoria->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
-                                                    {{method_field('DELETE')}}
+                                                    @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
                                             </td>

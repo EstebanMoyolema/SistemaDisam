@@ -53,16 +53,15 @@ DISAM | Clientes
                                     <tr>
                                         <th>No</th>
                                         
-										<th hidden="true">Cli Id</th>
-										<th>Tipo Documento</th>
-										<th># Documento</th>
-										<th>Nombre</th>
-										<th>Apellido</th>
-										<th>Telefono</th>
-										<th>Direccion</th>
-										<th>Nombre Comercial</th>
-										<th>Email</th>
-										<th>Ruta</th>
+										<th>Cli Tipodocumento</th>
+										<th>Cli Nodocumento</th>
+										<th>Cli Nombre</th>
+										<th>Cli Apellido</th>
+										<th>Cli Telefono</th>
+										<th>Cli Direccion</th>
+										<th>Cli Nombrecomercial</th>
+										<th>Cli Email</th>
+										<th>Rutas Id</th>
 
                                         <th></th>
                                     </tr>
@@ -72,7 +71,6 @@ DISAM | Clientes
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden="true">{{ $cliente->cli_ID }}</td>
 											<td>{{ $cliente->cli_TipoDocumento }}</td>
 											<td>{{ $cliente->cli_NoDocumento }}</td>
 											<td>{{ $cliente->cli_Nombre }}</td>
@@ -84,9 +82,9 @@ DISAM | Clientes
 											<td>{{ $cliente->ruta->rut_Nombre}}</td>
 
                                             <td>
-                                                <form action="{{ route('clientes.index',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.index',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.index',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

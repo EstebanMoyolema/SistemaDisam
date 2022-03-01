@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Proveedores
+ * Class Proveedore
  *
- * @property $prov_ID
+ * @property $id
  * @property $prov_Nombre
  * @property $prov_NombreRepresentante
  * @property $prov_Direccion
@@ -25,11 +25,10 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Proveedores extends Model
+class Proveedore extends Model
 {
     
     static $rules = [
-		'prov_ID' => 'required',
 		'prov_Nombre' => 'required',
 		'prov_NombreRepresentante' => 'required',
 		'prov_RUC' => 'required',
@@ -43,7 +42,7 @@ class Proveedores extends Model
      *
      * @var array
      */
-    protected $fillable = ['prov_ID','prov_Nombre','prov_NombreRepresentante','prov_Direccion','prov_Email','prov_Telefono','prov_Telefono2','prov_Telefono3','prov_RUC','prov_Observacion','prov_Activo'];
+    protected $fillable = ['prov_Nombre','prov_NombreRepresentante','prov_Direccion','prov_Email','prov_Telefono','prov_Telefono2','prov_Telefono3','prov_RUC','prov_Observacion','prov_Activo'];
 
 
     /**
@@ -51,7 +50,7 @@ class Proveedores extends Model
      */
     public function productos()
     {
-        return $this->hasMany('App\Models\Producto', 'proveedor_ID', 'prov_ID');
+        return $this->hasMany('App\Models\Producto', 'proveedor_ID', 'id');
     }
     
 

@@ -30,13 +30,13 @@ DISAM | Proveedores
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Create Proveedores</span>
+                        <span class="card-title">Create Proveedore</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('proveedores.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('proveedores.form')
+                            @include('proveedore.form')
 
                         </form>
                     </div>
@@ -44,7 +44,6 @@ DISAM | Proveedores
             </div>
         </div>
     </section>
-
 </div>
 </div>
 </div>

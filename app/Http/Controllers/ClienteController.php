@@ -33,7 +33,7 @@ class ClienteController extends Controller
     public function create()
     {
         $cliente = new Cliente();
-        $rutas = Ruta::pluck('rut_Nombre','rut_ID');
+        $rutas = Ruta::pluck('rut_Nombre','id');
         return view('cliente.create', compact('cliente','rutas'));
     }
 
@@ -75,7 +75,7 @@ class ClienteController extends Controller
     public function edit($id)
     {
         $cliente = Cliente::find($id);
-        $rutas = Ruta::pluck('rut_Nombre','rut_ID');
+        $rutas = Ruta::pluck('rut_Nombre','id');
         return view('cliente.edit', compact('cliente','rutas'));
     }
 

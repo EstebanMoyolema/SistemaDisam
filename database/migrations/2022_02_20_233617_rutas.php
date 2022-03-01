@@ -19,7 +19,7 @@ class Rutas extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('rut_ID');
+            $table->bigIncrements('id');
             $table->string('rut_Nombre');
             $table->dateTime('updated_at');
             $table->dateTime('created_at');

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Categoria
  *
- * @property $cat_ID
+ * @property $id
  * @property $cat_Nombre
  * @property $updated_at
  * @property $created_at
@@ -20,7 +20,6 @@ class Categoria extends Model
 {
     
     static $rules = [
-		'cat_ID' => 'required',
 		'cat_Nombre' => 'required',
     ];
 
@@ -31,7 +30,7 @@ class Categoria extends Model
      *
      * @var array
      */
-    protected $fillable = ['cat_ID','cat_Nombre'];
+    protected $fillable = ['cat_Nombre'];
 
 
     /**
@@ -39,7 +38,7 @@ class Categoria extends Model
      */
     public function productos()
     {
-        return $this->hasMany('App\Models\Producto', 'categoria_ID', 'cat_ID');
+        return $this->hasMany('App\Models\Producto', 'categoria_ID', 'id');
     }
     
 

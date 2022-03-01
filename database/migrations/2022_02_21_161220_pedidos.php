@@ -19,7 +19,7 @@ class Pedidos extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('ped_ID');
+            $table->bigIncrements('id');
             $table->date('ped_FechaPedido');
             $table->float('ped_SubTotal',4,2);
             $table->float('ped_Total',4,2);
@@ -29,11 +29,11 @@ class Pedidos extends Migration
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('cliente_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('cliente_ID')->references('cli_ID')->on('clientes')->onDelete("cascade");
+            $table->foreign('cliente_ID')->references('id')->on('clientes')->onDelete("cascade");
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('producto_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('producto_ID')->references('pro_ID')->on('productos')->onDelete("cascade");
+            $table->foreign('producto_ID')->references('id')->on('productos')->onDelete("cascade");
         });
     }
 

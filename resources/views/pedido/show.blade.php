@@ -38,10 +38,6 @@ DISAM | Pedidos
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Ped Id:</strong>
-                            {{ $pedido->ped_ID }}
-                        </div>
-                        <div class="form-group">
                             <strong>Ped Fechapedido:</strong>
                             {{ $pedido->ped_FechaPedido }}
                         </div>

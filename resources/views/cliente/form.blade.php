@@ -2,13 +2,8 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('cli_ID') }}
-            {{ Form::text('cli_ID', $cliente->cli_ID, ['class' => 'form-control' . ($errors->has('cli_ID') ? ' is-invalid' : ''), 'placeholder' => 'Cli Id']) }}
-            {!! $errors->first('cli_ID', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Tipo de documento') }}
-            {{ Form::select('cli_TipoDocumento', array('cedula'=>'Cedula','pasaporte'=>'Pasaporte','consfinal'=>'Consumidor Final','ruc'=>'Registro Único de Contribuyente'), $cliente->cli_TipoDocumento, ['class' => 'form-control' . ($errors->has('cli_TipoDocumento') ? ' is-invalid' : ''), 'placeholder' => 'Cli Tipodocumento']) }}
+            {{ Form::label('cli_TipoDocumento') }}
+            {{ Form::select('cli_TipoDocumento',array('cedula'=>'Cedula','pasaporte'=>'Pasaporte','consFinal'=>'Consumidor Final','ruc'=>'Registro Único de Contribuyentes'), $cliente->cli_TipoDocumento, ['class' => 'form-control' . ($errors->has('cli_TipoDocumento') ? ' is-invalid' : ''), 'placeholder' => 'Cli Tipodocumento']) }}
             {!! $errors->first('cli_TipoDocumento', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

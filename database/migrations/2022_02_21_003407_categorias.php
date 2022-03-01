@@ -19,7 +19,7 @@ class Categorias extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('cat_ID');
+            $table->bigIncrements('id');
             $table->string('cat_Nombre');
             $table->dateTime('updated_at');
             $table->dateTime('created_at');

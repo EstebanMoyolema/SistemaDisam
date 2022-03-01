@@ -19,7 +19,7 @@ class Proveedores extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('prov_ID');
+            $table->bigIncrements('id');
             $table->string('prov_Nombre');
             $table->string('prov_NombreRepresentante');
             $table->string('prov_Direccion')->nullable();

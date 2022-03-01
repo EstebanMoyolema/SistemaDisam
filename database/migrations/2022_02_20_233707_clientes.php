@@ -19,7 +19,7 @@ class Clientes extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('cli_ID');
+            $table->bigIncrements('id');
             $table->string('cli_TipoDocumento');
             $table->string('cli_NoDocumento');
             $table->string('cli_Nombre');
@@ -33,7 +33,7 @@ class Clientes extends Migration
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('rutas_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('rutas_ID')->references('rut_ID')->on('rutas')->onDelete("cascade");
+            $table->foreign('rutas_ID')->references('id')->on('rutas')->onDelete("cascade");
         });
     }
 

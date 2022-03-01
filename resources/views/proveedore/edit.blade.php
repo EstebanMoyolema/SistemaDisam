@@ -30,14 +30,14 @@ DISAM | Proveedores
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">Update Proveedores</span>
+                        <span class="card-title">Update Proveedore</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('proveedores.update', $proveedores->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('proveedores.update', $proveedore->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 
-                            @include('proveedores.form')
+                            @include('proveedore.form')
 
                         </form>
                     </div>
@@ -45,7 +45,6 @@ DISAM | Proveedores
             </div>
         </div>
     </section>
-
 </div>
 </div>
 </div>

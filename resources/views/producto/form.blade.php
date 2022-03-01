@@ -2,11 +2,6 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('pro_ID') }}
-            {{ Form::text('pro_ID', $producto->pro_ID, ['class' => 'form-control' . ($errors->has('pro_ID') ? ' is-invalid' : ''), 'placeholder' => 'Pro Id']) }}
-            {!! $errors->first('pro_ID', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('pro_Nombre') }}
             {{ Form::text('pro_Nombre', $producto->pro_Nombre, ['class' => 'form-control' . ($errors->has('pro_Nombre') ? ' is-invalid' : ''), 'placeholder' => 'Pro Nombre']) }}
             {!! $errors->first('pro_Nombre', '<div class="invalid-feedback">:message</div>') !!}
@@ -63,7 +58,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('categoria_ID') }}
-            {{ Form::select('categoria_ID', $categoria ,$producto->categoria_ID, ['class' => 'form-control' . ($errors->has('categoria_ID') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
+            {{ Form::select('categoria_ID', $categoria , $producto->categoria_ID, ['class' => 'form-control' . ($errors->has('categoria_ID') ? ' is-invalid' : ''), 'placeholder' => 'Categoria Id']) }}
             {!! $errors->first('categoria_ID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

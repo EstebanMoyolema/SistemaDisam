@@ -30,7 +30,7 @@ DISAM | Proveedores
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('proveedores') }}
+                                {{ __('Proveedore') }}
                             </span>
 
                              <div class="float-right">
@@ -53,47 +53,45 @@ DISAM | Proveedores
                                     <tr>
                                         <th>No</th>
                                         
-										<th hidden="true">Prov Id</th>
-										<th>Nombre</th>
-										<th>Representante</th>
-										<th>Direccion</th>
-										<th>Email</th>
-										<th>Telefono</th>
-										<th>Telefono2</th>
-										<th>Telefono3</th>
-										<th>Ruc</th>
-										<th>Observacion</th>
-										<th>Activo</th>
+										<th>Prov Nombre</th>
+										<th>Prov Nombrerepresentante</th>
+										<th>Prov Direccion</th>
+										<th>Prov Email</th>
+										<th>Prov Telefono</th>
+										<th>Prov Telefono2</th>
+										<th>Prov Telefono3</th>
+										<th>Prov Ruc</th>
+										<th>Prov Observacion</th>
+										<th>Prov Activo</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($proveedores as $proveedor)
+                                    @foreach ($proveedores as $proveedore)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td hidden="true">{{ $proveedor->prov_ID }}</td>
-											<td>{{ $proveedor->prov_Nombre }}</td>
-											<td>{{ $proveedor->prov_NombreRepresentante }}</td>
-											<td>{{ $proveedor->prov_Direccion }}</td>
-											<td>{{ $proveedor->prov_Email }}</td>
-											<td>{{ $proveedor->prov_Telefono }}</td>
-											<td>{{ $proveedor->prov_Telefono2 }}</td>
-											<td>{{ $proveedor->prov_Telefono3 }}</td>
-											<td>{{ $proveedor->prov_RUC }}</td>
-											<td>{{ $proveedor->prov_Observacion }}</td>
-											<td>{{ $proveedor->prov_Activo }}</td>
+											<td>{{ $proveedore->prov_Nombre }}</td>
+											<td>{{ $proveedore->prov_NombreRepresentante }}</td>
+											<td>{{ $proveedore->prov_Direccion }}</td>
+											<td>{{ $proveedore->prov_Email }}</td>
+											<td>{{ $proveedore->prov_Telefono }}</td>
+											<td>{{ $proveedore->prov_Telefono2 }}</td>
+											<td>{{ $proveedore->prov_Telefono3 }}</td>
+											<td>{{ $proveedore->prov_RUC }}</td>
+											<td>{{ $proveedore->prov_Observacion }}</td>
+											<td>{{ $proveedore->prov_Activo }}</td>
 
-                                            {{-- <td>
-                                                <form action="{{ route('proveedores.index',$proveedor->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('proveedores.create',$proveedor->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('proveedores.create ',$proveedor->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                            <td>
+                                                <form action="{{ route('proveedores.destroy',$proveedore->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('proveedores.show',$proveedore->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('proveedores.edit',$proveedore->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
                                                 </form>
-                                            </td> --}}
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -105,7 +103,6 @@ DISAM | Proveedores
             </div>
         </div>
     </div>
-
 </div>
 </div>
 </div>

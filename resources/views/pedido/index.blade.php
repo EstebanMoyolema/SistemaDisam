@@ -54,7 +54,6 @@ DISAM | Pedidos
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Ped Id</th>
 										<th>Ped Fechapedido</th>
 										<th>Ped Subtotal</th>
 										<th>Ped Total</th>
@@ -69,7 +68,6 @@ DISAM | Pedidos
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pedido->ped_ID }}</td>
 											<td>{{ $pedido->ped_FechaPedido }}</td>
 											<td>{{ $pedido->ped_SubTotal }}</td>
 											<td>{{ $pedido->ped_Total }}</td>
@@ -96,7 +94,7 @@ DISAM | Pedidos
             </div>
         </div>
     </div>
-
+    
 </div>
 </div>
 </div>

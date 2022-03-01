@@ -23,6 +23,7 @@ DISAM | Productos
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
     <section class="content container-fluid">
+    <section class="content container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
@@ -37,10 +38,6 @@ DISAM | Productos
 
                     <div class="card-body">
                         
-                        <div class="form-group">
-                            <strong>Pro Id:</strong>
-                            {{ $producto->pro_ID }}
-                        </div>
                         <div class="form-group">
                             <strong>Pro Nombre:</strong>
                             {{ $producto->pro_Nombre }}
@@ -99,7 +96,6 @@ DISAM | Productos
             </div>
         </div>
     </section>
-
 </div>
 </div>
 </div>

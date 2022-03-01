@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proveedores;
+use App\Models\Proveedore;
 use Illuminate\Http\Request;
 
 /**
- * Class ProveedoresController
+ * Class ProveedoreController
  * @package App\Http\Controllers
  */
-class ProveedoresController extends Controller
+class ProveedoreController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +18,9 @@ class ProveedoresController extends Controller
      */
     public function index()
     {
-        $proveedores = Proveedores::paginate();
+        $proveedores = Proveedore::paginate();
 
-        return view('proveedores.index', compact('proveedores'))
+        return view('proveedore.index', compact('proveedores'))
             ->with('i', (request()->input('page', 1) - 1) * $proveedores->perPage());
     }
 
@@ -31,8 +31,8 @@ class ProveedoresController extends Controller
      */
     public function create()
     {
-        $proveedores = new Proveedores();
-        return view('proveedores.create', compact('proveedores'));
+        $proveedore = new Proveedore();
+        return view('proveedore.create', compact('proveedore'));
     }
 
     /**
@@ -43,12 +43,12 @@ class ProveedoresController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Proveedores::$rules);
+        request()->validate(Proveedore::$rules);
 
-        $proveedores = Proveedores::create($request->all());
+        $proveedore = Proveedore::create($request->all());
 
         return redirect()->route('proveedores.index')
-            ->with('success', 'Proveedores created successfully.');
+            ->with('success', 'Proveedore created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ProveedoresController extends Controller
      */
     public function show($id)
     {
-        $proveedores = Proveedores::find($id);
+        $proveedore = Proveedore::find($id);
 
-        return view('proveedores.show', compact('proveedores'));
+        return view('proveedore.show', compact('proveedore'));
     }
 
     /**
@@ -72,26 +72,26 @@ class ProveedoresController extends Controller
      */
     public function edit($id)
     {
-        $proveedores = Proveedores::find($id);
+        $proveedore = Proveedore::find($id);
 
-        return view('proveedores.edit', compact('proveedores'));
+        return view('proveedore.edit', compact('proveedore'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Proveedores $proveedores
+     * @param  Proveedore $proveedore
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Proveedores $proveedores)
+    public function update(Request $request, Proveedore $proveedore)
     {
-        request()->validate(Proveedores::$rules);
+        request()->validate(Proveedore::$rules);
 
-        $proveedores->update($request->all());
+        $proveedore->update($request->all());
 
         return redirect()->route('proveedores.index')
-            ->with('success', 'Proveedores updated successfully');
+            ->with('success', 'Proveedore updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class ProveedoresController extends Controller
      */
     public function destroy($id)
     {
-        $proveedores = Proveedores::find($id)->delete();
+        $proveedore = Proveedore::find($id)->delete();
 
         return redirect()->route('proveedores.index')
-            ->with('success', 'Proveedores deleted successfully');
+            ->with('success', 'Proveedore deleted successfully');
     }
 }

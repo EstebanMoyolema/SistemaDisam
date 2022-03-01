@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
-use App\Http\Controllers\ProveedoresController;
+use App\Http\Controllers\ProveedoreController;
 use App\Http\Controllers\RutaController;
 
 
@@ -82,7 +82,7 @@ Route::group(['middleware' => ['auth', 'role:distribuidor']], function () {
 Route::group(['middleware' => ['auth', 'role:bodega']], function () {
     Route::resource('/dashboard/productos',ProductoController::class);
     Route::resource('/dashboard/categorias',CategoriaController::class);
-    Route::resource('/dashboard/proveedores',ProveedoresController::class);
+    Route::resource('/dashboard/proveedores',ProveedoreController::class);
 });
 
 require __DIR__.'/auth.php';

@@ -22,16 +22,15 @@ DISAM | Productos
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-7">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-
     <div class="container-fluid">
         <div class="row">
-            <div class="col-sm-12"> 
+            <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Listado de Productos') }}
+                                {{ __('Producto') }}
                             </span>
 
                              <div class="float-right">
@@ -50,26 +49,25 @@ DISAM | Productos
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
-                                <thead class="thead-dark">
+                                <thead class="thead">
                                     <tr>
-                                        <th scope="col">No</th>
+                                        <th>No</th>
                                         
-										<th style="display:none;">Pro Id</th>
-										<th scope="col"Nombre</th>
-										<th scope="col">Descripcion</th>
-										<th scope="col">Peso</th>
-										<th scope="col">Precio de Compra</th>
-										<th scope="col">Fecha Elaboracion</th>
-										<th scope="col">Fecha Expiracion</th>
-										<th scope="col">Precio de Venta</th>
-										<th scope="col">Stock</th>
-										<th scope="col">Descontinuado</th>
-										<th hidden="true">Pro Imagen</th>
-										<th scope="col">Vendido</th>
-										<th scope="col">Categoria</th>
-										<th scope="col">Proveedor</th>
+										<th>Pro Nombre</th>
+										<th>Pro Descripcion</th>
+										<th>Pro Peso</th>
+										<th>Pro Preciocompra</th>
+										<th>Pro Fechaelaboracion</th>
+										<th>Pro Fechaexpiracion</th>
+										<th>Pro Precioventa</th>
+										<th>Pro Stock</th>
+										<th>Pro Descontinuado</th>
+										<th>Pro Imagen</th>
+										<th>Pro Vendido</th>
+										<th>Categoria Id</th>
+										<th>Proveedor Id</th>
 
-                                        <th scope="col">Acciones</th>
+                                        <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -77,7 +75,6 @@ DISAM | Productos
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td style="display:none;">{{ $producto->pro_ID }}</td>
 											<td>{{ $producto->pro_Nombre }}</td>
 											<td>{{ $producto->pro_Descripcion }}</td>
 											<td>{{ $producto->pro_Peso }}</td>
@@ -87,15 +84,15 @@ DISAM | Productos
 											<td>{{ $producto->pro_PrecioVenta }}</td>
 											<td>{{ $producto->pro_Stock }}</td>
 											<td>{{ $producto->pro_Descontinuado }}</td>
-											<td hidden="true">{{ $producto->pro_Imagen }}</td>
+											<td>{{ $producto->pro_Imagen }}</td>
 											<td>{{ $producto->pro_Vendido }}</td>
 											<td>{{ $producto->categoria->cat_Nombre }}</td>
-											<td>{{ $producto->proveedores->prov_Nombre }}</td>
+											<td>{{ $producto->proveedore->prov_Nombre }}</td>
 
                                             <td>
-                                                <form action="{{ route('productos.index',$producto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.index',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.index',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>

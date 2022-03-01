@@ -19,10 +19,10 @@ class Productos extends Migration
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
-            $table->bigIncrements('pro_ID');
+            $table->bigIncrements('id');
             $table->string('pro_Nombre');
             $table->string('pro_Descripcion')->nullable();
-            $table->decimal('pro_Peso',4,2)->nullable();
+            $table->string('pro_Peso',4,2)->nullable();
             $table->float('pro_PrecioCompra',4,2);
             $table->date('pro_FechaElaboracion')->nullable();
             $table->date('pro_FechaExpiracion')->nullable();
@@ -37,11 +37,11 @@ class Productos extends Migration
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('categoria_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('categoria_ID')->references('cat_ID')->on('categorias')->onDelete("cascade");
+            $table->foreign('categoria_ID')->references('id')->on('categorias')->onDelete("cascade");
             //Tabla en blanco para relacion con la foreingn key
             $table->bigInteger('proveedor_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('proveedor_ID')->references('prov_ID')->on('proveedores')->onDelete("cascade");
+            $table->foreign('proveedor_ID')->references('id')->on('proveedores')->onDelete("cascade");
         });
     }
 

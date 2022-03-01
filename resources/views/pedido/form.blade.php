@@ -2,13 +2,8 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('ped_ID') }}
-            {{ Form::text('ped_ID', $pedido->ped_ID, ['class' => 'form-control' . ($errors->has('ped_ID') ? ' is-invalid' : ''), 'placeholder' => 'Ped Id']) }}
-            {!! $errors->first('ped_ID', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('ped_FechaPedido') }}
-            {{ Form::date('ped_FechaPedido', $pedido->ped_FechaPedido, ['class' => 'form-control' . ($errors->has('ped_FechaPedido') ? ' is-invalid' : ''), 'placeholder' => 'Ped Fechapedido']) }}
+            {{ Form::text('ped_FechaPedido', $pedido->ped_FechaPedido, ['class' => 'form-control' . ($errors->has('ped_FechaPedido') ? ' is-invalid' : ''), 'placeholder' => 'Ped Fechapedido']) }}
             {!! $errors->first('ped_FechaPedido', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

@@ -38,10 +38,6 @@ DISAM | Rutas
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cli Id:</strong>
-                            {{ $cliente->cli_ID }}
-                        </div>
-                        <div class="form-group">
                             <strong>Cli Tipodocumento:</strong>
                             {{ $cliente->cli_TipoDocumento }}
                         </div>

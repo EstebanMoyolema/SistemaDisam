@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Ruta
  *
- * @property $rut_ID
+ * @property $id
  * @property $rut_Nombre
  * @property $updated_at
  * @property $created_at
@@ -20,7 +20,6 @@ class Ruta extends Model
 {
     
     static $rules = [
-		'rut_ID' => 'required',
 		'rut_Nombre' => 'required',
     ];
 
@@ -31,7 +30,7 @@ class Ruta extends Model
      *
      * @var array
      */
-    protected $fillable = ['rut_ID','rut_Nombre'];
+    protected $fillable = ['rut_Nombre'];
 
 
     /**
@@ -39,7 +38,7 @@ class Ruta extends Model
      */
     public function clientes()
     {
-        return $this->hasMany('App\Models\Cliente', 'rutas_ID', 'rut_ID');
+        return $this->hasMany('App\Models\Cliente', 'rutas_ID', 'id');
     }
     
 

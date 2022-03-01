@@ -38,10 +38,6 @@ DISAM | Categorias
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cat Id:</strong>
-                            {{ $categoria->cat_ID }}
-                        </div>
-                        <div class="form-group">
                             <strong>Cat Nombre:</strong>
                             {{ $categoria->cat_Nombre }}
                         </div>
@@ -51,7 +47,6 @@ DISAM | Categorias
             </div>
         </div>
     </section>
-
 </div>
 </div>
 </div>
