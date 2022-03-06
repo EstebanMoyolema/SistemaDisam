@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property $prov_Email
  * @property $prov_Telefono
  * @property $prov_Telefono2
- * @property $prov_Telefono3
  * @property $prov_RUC
  * @property $prov_Observacion
  * @property $prov_Activo
@@ -42,7 +41,7 @@ class Proveedore extends Model
      *
      * @var array
      */
-    protected $fillable = ['prov_Nombre','prov_NombreRepresentante','prov_Direccion','prov_Email','prov_Telefono','prov_Telefono2','prov_Telefono3','prov_RUC','prov_Observacion','prov_Activo'];
+    protected $fillable = ['prov_Nombre','prov_NombreRepresentante','prov_Direccion','prov_Email','prov_Telefono','prov_Telefono2','prov_RUC','prov_Observacion','prov_Activo'];
 
 
     /**
