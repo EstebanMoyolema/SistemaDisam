@@ -8,16 +8,15 @@ use Illuminate\Database\Eloquent\Model;
  * Class Producto
  *
  * @property $id
+ * @property $pro_Codigo
  * @property $pro_Nombre
  * @property $pro_Descripcion
  * @property $pro_Peso
  * @property $pro_PrecioCompra
  * @property $pro_FechaElaboracion
  * @property $pro_FechaExpiracion
- * @property $pro_PrecioVenta
  * @property $pro_Stock
  * @property $pro_Descontinuado
- * @property $pro_Imagen
  * @property $pro_Vendido
  * @property $updated_at
  * @property $created_at
@@ -25,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $proveedor_ID
  *
  * @property Categoria $categoria
- * @property Pedido[] $pedidos
+ * @property Detalle[] $detalles
  * @property Proveedore $proveedore
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -34,6 +33,7 @@ class Producto extends Model
 {
     
     static $rules = [
+		'pro_Codigo' => 'required',
 		'pro_Nombre' => 'required',
 		'pro_PrecioCompra' => 'required',
 		'categoria_ID' => 'required',
@@ -47,7 +47,7 @@ class Producto extends Model
      *
      * @var array
      */
-    protected $fillable = ['pro_Nombre','pro_Descripcion','pro_Peso','pro_PrecioCompra','pro_FechaElaboracion','pro_FechaExpiracion','pro_PrecioVenta','pro_Stock','pro_Descontinuado','pro_Imagen','pro_Vendido','categoria_ID','proveedor_ID'];
+    protected $fillable = ['pro_Codigo','pro_Nombre','pro_Descripcion','pro_Peso','pro_PrecioCompra','pro_FechaElaboracion','pro_FechaExpiracion','pro_Stock','pro_Descontinuado','pro_Vendido','categoria_ID','proveedor_ID'];
 
 
     /**
@@ -61,9 +61,9 @@ class Producto extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function pedidos()
+    public function detalles()
     {
-        return $this->hasMany('App\Models\Pedido', 'producto_ID', 'id');
+        return $this->hasMany('App\Models\Detalle', 'producto_ID', 'id');
     }
     
     /**
