@@ -60,7 +60,6 @@ DISAM | Proveedores
 										<th>Email</th>
                                         <th>Telefono</th>
 										<th>Telefono2</th>
-										<th>Telefono3</th>
 										<th>Observacion</th>
 										<th>Activo</th>
 
@@ -77,9 +76,8 @@ DISAM | Proveedores
 											<td>{{ $proveedore->prov_NombreRepresentante }}</td>
 											<td>{{ $proveedore->prov_Direccion }}</td>
 											<td>{{ $proveedore->prov_Email }}</td>
-                                            <td>{{ $proveedore->prov_Telefono }}</td>
+											<td>{{ $proveedore->prov_Telefono }}</td>
 											<td>{{ $proveedore->prov_Telefono2 }}</td>
-											<td>{{ $proveedore->prov_Telefono3 }}</td>
 											<td>{{ $proveedore->prov_Observacion }}</td>
 											<td>{{ $proveedore->prov_Activo }}</td>
 

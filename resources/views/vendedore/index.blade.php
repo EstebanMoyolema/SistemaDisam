@@ -1,10 +1,27 @@
-@extends('layouts.app')
-
-@section('template_title')
-    Vendedore
+@section('titlePage')
+DISAM | Vendedores
 @endsection
-
-@section('content')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+        @section('opcionesMenu')
+        <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos')">
+            {{ __('Productos') }}
+        </x-nav-link>
+        <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias')">
+            {{ __('Categorias') }}
+        </x-nav-link>
+        <x-nav-link :href="route('proveedores.index')" :active="request()->routeIs('proveedores')">
+            {{ __('Proveedores') }}
+        </x-nav-link>
+        @endsection
+    </x-slot>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 bg-white border-b border-gray-200">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -56,11 +73,11 @@
 
                                             <td>
                                                 <form action="{{ route('vendedores.destroy',$vendedore->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('vendedores.show',$vendedore->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('vendedores.edit',$vendedore->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('vendedores.show',$vendedore->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('vendedores.edit',$vendedore->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -74,4 +91,8 @@
             </div>
         </div>
     </div>
-@endsection
+</div>
+</div>
+</div>
+</div>
+</x-app-layout>

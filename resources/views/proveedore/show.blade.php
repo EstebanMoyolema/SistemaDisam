@@ -62,10 +62,6 @@ DISAM | Proveedores
                             {{ $proveedore->prov_Telefono2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Telefono3:</strong>
-                            {{ $proveedore->prov_Telefono3 }}
-                        </div>
-                        <div class="form-group">
                             <strong>Ruc:</strong>
                             {{ $proveedore->prov_RUC }}
                         </div>

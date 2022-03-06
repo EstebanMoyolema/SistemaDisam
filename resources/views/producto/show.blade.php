@@ -39,6 +39,10 @@ DISAM | Productos
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Codigo:</strong>
+                            {{ $producto->pro_Codigo }}
+                        </div>
+                        <div class="form-group">
                             <strong>Nombre:</strong>
                             {{ $producto->pro_Nombre }}
                         </div>
@@ -63,20 +67,12 @@ DISAM | Productos
                             {{ $producto->pro_FechaExpiracion }}
                         </div>
                         <div class="form-group">
-                            <strong>Precio de Venta:</strong>
-                            {{ $producto->pro_PrecioVenta }}
-                        </div>
-                        <div class="form-group">
                             <strong>Stock:</strong>
                             {{ $producto->pro_Stock }}
                         </div>
                         <div class="form-group">
                             <strong>Descontinuado:</strong>
                             {{ $producto->pro_Descontinuado }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Imagen:</strong>
-                            {{ $producto->pro_Imagen }}
                         </div>
                         <div class="form-group">
                             <strong>Cantidad Vendida:</strong>

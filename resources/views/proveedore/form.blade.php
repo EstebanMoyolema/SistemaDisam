@@ -32,11 +32,6 @@
             {!! $errors->first('prov_Telefono2', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Telefono 3') }}
-            {{ Form::text('prov_Telefono3', $proveedore->prov_Telefono3, ['class' => 'form-control' . ($errors->has('prov_Telefono3') ? ' is-invalid' : ''), 'placeholder' => '0777777777...']) }}
-            {!! $errors->first('prov_Telefono3', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('RUC') }}
             {{ Form::text('prov_RUC', $proveedore->prov_RUC, ['class' => 'form-control' . ($errors->has('prov_RUC') ? ' is-invalid' : ''), 'placeholder' => '177777777001']) }}
             {!! $errors->first('prov_RUC', '<div class="invalid-feedback">:message</div>') !!}

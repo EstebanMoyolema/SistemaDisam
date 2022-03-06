@@ -53,17 +53,16 @@ DISAM | Productos
                                     <tr>
                                         <th>No</th>
                                         
+										<th>Pro Codigo</th>
 										<th>Nombre</th>
 										<th>Descripcion</th>
 										<th>Peso</th>
 										<th>Precio de Compra</th>
 										<th>Fecha Elaboracion</th>
 										<th>Fecha Expiracion</th>
-										<th>Precio de Venta</th>
 										<th>Stock</th>
 										<th>Descontinuado</th>
-										<th>Imagen</th>
-										<th>Cantidad Vendida</th>
+										<th>Vendido</th>
 										<th>Categoria</th>
 										<th>Proveedor</th>
 
@@ -75,16 +74,15 @@ DISAM | Productos
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+											<td>{{ $producto->pro_Codigo }}</td>
 											<td>{{ $producto->pro_Nombre }}</td>
 											<td>{{ $producto->pro_Descripcion }}</td>
 											<td>{{ $producto->pro_Peso }}</td>
 											<td>{{ $producto->pro_PrecioCompra }}</td>
 											<td>{{ $producto->pro_FechaElaboracion }}</td>
 											<td>{{ $producto->pro_FechaExpiracion }}</td>
-											<td>{{ $producto->pro_PrecioVenta }}</td>
 											<td>{{ $producto->pro_Stock }}</td>
 											<td>{{ $producto->pro_Descontinuado }}</td>
-											<td>{{ $producto->pro_Imagen }}</td>
 											<td>{{ $producto->pro_Vendido }}</td>
 											<td>{{ $producto->categoria->cat_Nombre }}</td>
 											<td>{{ $producto->proveedore->prov_Nombre }}</td>

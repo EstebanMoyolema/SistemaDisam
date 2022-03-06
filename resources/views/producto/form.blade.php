@@ -2,6 +2,11 @@
     <div class="box-body">
         
         <div class="form-group">
+            {{ Form::label('Codigo') }}
+            {{ Form::text('pro_Codigo', $producto->pro_Codigo, ['class' => 'form-control' . ($errors->has('pro_Codigo') ? ' is-invalid' : ''), 'placeholder' => 'TO0600']) }}
+            {!! $errors->first('pro_Codigo', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
             {{ Form::label('Nombre') }}
             {{ Form::text('pro_Nombre', $producto->pro_Nombre, ['class' => 'form-control' . ($errors->has('pro_Nombre') ? ' is-invalid' : ''), 'placeholder' => 'Jugo de Mora...']) }}
             {!! $errors->first('pro_Nombre', '<div class="invalid-feedback">:message</div>') !!}
@@ -32,11 +37,6 @@
             {!! $errors->first('pro_FechaExpiracion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('Precio de Venta') }}
-            {{ Form::text('pro_PrecioVenta', $producto->pro_PrecioVenta, ['class' => 'form-control' . ($errors->has('pro_PrecioVenta') ? ' is-invalid' : ''), 'placeholder' => 'Pro Precioventa']) }}
-            {!! $errors->first('pro_PrecioVenta', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('Stock') }}
             {{ Form::text('pro_Stock', $producto->pro_Stock, ['class' => 'form-control' . ($errors->has('pro_Stock') ? ' is-invalid' : ''), 'placeholder' => 'Pro Stock']) }}
             {!! $errors->first('pro_Stock', '<div class="invalid-feedback">:message</div>') !!}
@@ -45,11 +45,6 @@
             {{ Form::label('Descontinuado') }}
             {{ Form::checkbox('pro_Descontinuado', $producto->pro_Descontinuado, ['class' => 'form-control' . ($errors->has('pro_Descontinuado') ? ' is-invalid' : ''), 'placeholder' => 'Descontinuado']) }}
             {!! $errors->first('pro_Descontinuado', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('Imagen') }}
-            {{ Form::text('pro_Imagen', $producto->pro_Imagen, ['class' => 'form-control' . ($errors->has('pro_Imagen') ? ' is-invalid' : ''), 'placeholder' => 'Imagen']) }}
-            {!! $errors->first('pro_Imagen', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('Producto Vendido') }}
