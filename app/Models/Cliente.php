@@ -32,7 +32,6 @@ class Cliente extends Model
 		'cli_TipoDocumento' => 'required',
 		'cli_NoDocumento' => 'required',
 		'cli_Nombre' => 'required',
-		'cli_NombreComercial' => 'required',
 		'rutas_ID' => 'required',
     ];
 
