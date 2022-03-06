@@ -2,13 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('rut_Nombre') }}
-            {{ Form::text('rut_Nombre', $ruta->rut_Nombre, ['class' => 'form-control' . ($errors->has('rut_Nombre') ? ' is-invalid' : ''), 'placeholder' => 'Rut Nombre']) }}
+            {{ Form::label('Escriba la Ruta') }}
+            {{ Form::text('rut_Nombre', $ruta->rut_Nombre, ['class' => 'form-control' . ($errors->has('rut_Nombre') ? ' is-invalid' : ''), 'placeholder' => 'El Valle...']) }}
             {!! $errors->first('rut_Nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <br>
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </div>
 </div>

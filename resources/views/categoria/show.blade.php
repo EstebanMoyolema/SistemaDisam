@@ -28,17 +28,17 @@ DISAM | Categorias
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Categoria</span>
+                            <span class="card-title">Ver Categoria</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('categorias.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cat Nombre:</strong>
+                            <strong>Nombre de la Categoria:</strong>
                             {{ $categoria->cat_Nombre }}
                         </div>
 

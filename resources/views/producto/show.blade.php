@@ -29,66 +29,66 @@ DISAM | Productos
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Producto</span>
+                            <span class="card-title">Ver Producto</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('productos.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('productos.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Pro Nombre:</strong>
+                            <strong>Nombre:</strong>
                             {{ $producto->pro_Nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Descripcion:</strong>
+                            <strong>Descripcion:</strong>
                             {{ $producto->pro_Descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Peso:</strong>
+                            <strong>Peso:</strong>
                             {{ $producto->pro_Peso }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Preciocompra:</strong>
+                            <strong>Precio de Compra:</strong>
                             {{ $producto->pro_PrecioCompra }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Fechaelaboracion:</strong>
+                            <strong>Fecha Elaboracion:</strong>
                             {{ $producto->pro_FechaElaboracion }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Fechaexpiracion:</strong>
+                            <strong>Fecha Expiracion:</strong>
                             {{ $producto->pro_FechaExpiracion }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Precioventa:</strong>
+                            <strong>Precio de Venta:</strong>
                             {{ $producto->pro_PrecioVenta }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Stock:</strong>
+                            <strong>Stock:</strong>
                             {{ $producto->pro_Stock }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Descontinuado:</strong>
+                            <strong>Descontinuado:</strong>
                             {{ $producto->pro_Descontinuado }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Imagen:</strong>
+                            <strong>Imagen:</strong>
                             {{ $producto->pro_Imagen }}
                         </div>
                         <div class="form-group">
-                            <strong>Pro Vendido:</strong>
+                            <strong>Cantidad Vendida:</strong>
                             {{ $producto->pro_Vendido }}
                         </div>
                         <div class="form-group">
-                            <strong>Categoria Id:</strong>
-                            {{ $producto->categoria_ID }}
+                            <strong>Categoria:</strong>
+                            {{ $producto->categoria->cat_Nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Proveedor Id:</strong>
-                            {{ $producto->proveedor_ID }}
+                            <strong>Proveedor:</strong>
+                            {{ $producto->proveedore->prov_Nombre }}
                         </div>
 
                     </div>

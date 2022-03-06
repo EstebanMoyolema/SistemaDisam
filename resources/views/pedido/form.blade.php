@@ -3,7 +3,7 @@
         
         <div class="form-group">
             {{ Form::label('ped_FechaPedido') }}
-            {{ Form::text('ped_FechaPedido', $pedido->ped_FechaPedido, ['class' => 'form-control' . ($errors->has('ped_FechaPedido') ? ' is-invalid' : ''), 'placeholder' => 'Ped Fechapedido']) }}
+            {{ Form::date('ped_FechaPedido', $pedido->ped_FechaPedido, ['class' => 'form-control' . ($errors->has('ped_FechaPedido') ? ' is-invalid' : ''), 'placeholder' => 'Ped Fechapedido']) }}
             {!! $errors->first('ped_FechaPedido', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -18,12 +18,12 @@
         </div>
         <div class="form-group">
             {{ Form::label('cliente_ID') }}
-            {{ Form::text('cliente_ID', $pedido->cliente_ID, ['class' => 'form-control' . ($errors->has('cliente_ID') ? ' is-invalid' : ''), 'placeholder' => 'Cliente Id']) }}
+            {{ Form::select('cliente_ID', $cliente, $pedido->cliente_ID, ['class' => 'form-control' . ($errors->has('cliente_ID') ? ' is-invalid' : ''), 'placeholder' => 'Cliente Id']) }}
             {!! $errors->first('cliente_ID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('producto_ID') }}
-            {{ Form::text('producto_ID', $pedido->producto_ID, ['class' => 'form-control' . ($errors->has('producto_ID') ? ' is-invalid' : ''), 'placeholder' => 'Producto Id']) }}
+            {{ Form::select('producto_ID', $producto, $pedido->producto_ID, ['class' => 'form-control' . ($errors->has('producto_ID') ? ' is-invalid' : ''), 'placeholder' => 'Producto Id']) }}
             {!! $errors->first('producto_ID', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

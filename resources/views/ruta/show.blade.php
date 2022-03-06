@@ -28,17 +28,17 @@ DISAM | Rutas
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Ruta</span>
+                            <span class="card-title">Ver Ruta</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('rutas.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('rutas.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Rut Nombre:</strong>
+                            <strong>Nombre de la Ruta:</strong>
                             {{ $ruta->rut_Nombre }}
                         </div>
 

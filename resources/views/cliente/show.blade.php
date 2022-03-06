@@ -28,50 +28,50 @@ DISAM | Rutas
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Cliente</span>
+                            <span class="card-title">Ver Cliente</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('clientes.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('clientes.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Cli Tipodocumento:</strong>
+                            <strong>Tipo de Documento:</strong>
                             {{ $cliente->cli_TipoDocumento }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Nodocumento:</strong>
+                            <strong>Nº Documento:</strong>
                             {{ $cliente->cli_NoDocumento }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Nombre:</strong>
+                            <strong>Nombres:</strong>
                             {{ $cliente->cli_Nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Apellido:</strong>
+                            <strong>Apellidos:</strong>
                             {{ $cliente->cli_Apellido }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Telefono:</strong>
+                            <strong>Telefono:</strong>
                             {{ $cliente->cli_Telefono }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Direccion:</strong>
+                            <strong>Direccion:</strong>
                             {{ $cliente->cli_Direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Nombrecomercial:</strong>
+                            <strong>Nombre Comercial:</strong>
                             {{ $cliente->cli_NombreComercial }}
                         </div>
                         <div class="form-group">
-                            <strong>Cli Email:</strong>
+                            <strong>Email:</strong>
                             {{ $cliente->cli_Email }}
                         </div>
                         <div class="form-group">
-                            <strong>Rutas Id:</strong>
-                            {{ $cliente->rutas_ID }}
+                            <strong>Ruta:</strong>
+                            {{ $cliente->ruta->rut_Nombre }}
                         </div>
 
                     </div>

@@ -30,12 +30,12 @@ DISAM | Clientes
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Cliente') }}
+                                {{ __('Clientes') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('clientes.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear Nuevo Cliente') }}
                                 </a>
                               </div>
                         </div>
@@ -53,15 +53,15 @@ DISAM | Clientes
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Cli Tipodocumento</th>
-										<th>Cli Nodocumento</th>
-										<th>Cli Nombre</th>
-										<th>Cli Apellido</th>
-										<th>Cli Telefono</th>
-										<th>Cli Direccion</th>
-										<th>Cli Nombrecomercial</th>
-										<th>Cli Email</th>
-										<th>Rutas Id</th>
+                                        <th>Nombre Comercial</th>
+                                        <th>Ruta</th>
+                                        <th>Nombres</th>
+										<th>Apellidos</th>
+										<th>Tipo de Documento</th>
+										<th>Nº Documento</th>
+										<th>Telefono</th>
+										<th>Direccion</th>
+										<th>Email</th>
 
                                         <th></th>
                                     </tr>
@@ -71,23 +71,23 @@ DISAM | Clientes
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
+                                            <td>{{ $cliente->cli_NombreComercial }}</td>
+                                            <td>{{ $cliente->ruta->rut_Nombre}}</td>
+                                            <td>{{ $cliente->cli_Nombre }}</td>
+											<td>{{ $cliente->cli_Apellido }}</td>
 											<td>{{ $cliente->cli_TipoDocumento }}</td>
 											<td>{{ $cliente->cli_NoDocumento }}</td>
-											<td>{{ $cliente->cli_Nombre }}</td>
-											<td>{{ $cliente->cli_Apellido }}</td>
 											<td>{{ $cliente->cli_Telefono }}</td>
 											<td>{{ $cliente->cli_Direccion }}</td>
-											<td>{{ $cliente->cli_NombreComercial }}</td>
 											<td>{{ $cliente->cli_Email }}</td>
-											<td>{{ $cliente->ruta->rut_Nombre}}</td>
 
                                             <td>
                                                 <form action="{{ route('clientes.destroy',$cliente->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('clientes.show',$cliente->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('clientes.edit',$cliente->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -28,53 +28,53 @@ DISAM | Proveedores
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">Show Proveedore</span>
+                            <span class="card-title">Ver Proveedor</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('proveedores.index') }}"> Back</a>
+                            <a class="btn btn-primary" href="{{ route('proveedores.index') }}"> Regresar</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Prov Nombre:</strong>
+                            <strong>Nombre:</strong>
                             {{ $proveedore->prov_Nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Nombrerepresentante:</strong>
+                            <strong>Nombre del Representante:</strong>
                             {{ $proveedore->prov_NombreRepresentante }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Direccion:</strong>
+                            <strong>Direccion:</strong>
                             {{ $proveedore->prov_Direccion }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Email:</strong>
+                            <strong>Email:</strong>
                             {{ $proveedore->prov_Email }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Telefono:</strong>
+                            <strong>Telefono:</strong>
                             {{ $proveedore->prov_Telefono }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Telefono2:</strong>
+                            <strong>Telefono2:</strong>
                             {{ $proveedore->prov_Telefono2 }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Telefono3:</strong>
+                            <strong>Telefono3:</strong>
                             {{ $proveedore->prov_Telefono3 }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Ruc:</strong>
+                            <strong>Ruc:</strong>
                             {{ $proveedore->prov_RUC }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Observacion:</strong>
+                            <strong>Observacion:</strong>
                             {{ $proveedore->prov_Observacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Prov Activo:</strong>
+                            <strong>Activo:</strong>
                             {{ $proveedore->prov_Activo }}
                         </div>
 

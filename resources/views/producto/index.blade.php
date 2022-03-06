@@ -30,12 +30,12 @@ DISAM | Productos
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Producto') }}
+                                {{ __('Productos') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('productos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear  Nuevo Producto') }}
                                 </a>
                               </div>
                         </div>
@@ -53,19 +53,19 @@ DISAM | Productos
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Pro Nombre</th>
-										<th>Pro Descripcion</th>
-										<th>Pro Peso</th>
-										<th>Pro Preciocompra</th>
-										<th>Pro Fechaelaboracion</th>
-										<th>Pro Fechaexpiracion</th>
-										<th>Pro Precioventa</th>
-										<th>Pro Stock</th>
-										<th>Pro Descontinuado</th>
-										<th>Pro Imagen</th>
-										<th>Pro Vendido</th>
-										<th>Categoria Id</th>
-										<th>Proveedor Id</th>
+										<th>Nombre</th>
+										<th>Descripcion</th>
+										<th>Peso</th>
+										<th>Precio de Compra</th>
+										<th>Fecha Elaboracion</th>
+										<th>Fecha Expiracion</th>
+										<th>Precio de Venta</th>
+										<th>Stock</th>
+										<th>Descontinuado</th>
+										<th>Imagen</th>
+										<th>Cantidad Vendida</th>
+										<th>Categoria</th>
+										<th>Proveedor</th>
 
                                         <th></th>
                                     </tr>
@@ -91,11 +91,11 @@ DISAM | Productos
 
                                             <td>
                                                 <form action="{{ route('productos.destroy',$producto->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Show</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Edit</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('productos.show',$producto->id) }}"><i class="fa fa-fw fa-eye"></i> Ver</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('productos.edit',$producto->id) }}"><i class="fa fa-fw fa-edit"></i> Editar</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> Eliminar</button>
                                                 </form>
                                             </td>
                                         </tr>
