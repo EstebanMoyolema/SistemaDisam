@@ -23,16 +23,9 @@ class Detalle extends Migration
             $table->decimal('det_Cantidad');
             $table->float('det_Precio',4,2);
 
-            //Tabla en blanco para relacion con la foreingn key
-            $table->bigInteger('pedido_ID')->unsigned();
-            //Creacion de relacion entre tablas
-            $table->foreign('pedido_ID')->references('id')->on('pedidos')->onDelete("cascade");
-            
-            //Tabla en blanco para relacion con la foreingn key
-            $table->bigInteger('producto_ID')->unsigned();
-            //Creacion de relacion entre tablas
-            $table->foreign('producto_ID')->references('id')->on('productos')->onDelete("cascade");
+            $table->foreignId('pedido_ID')->nullable()->constrained('pedidos')->cascadeOnUpdate()->nullOnDelete();
 
+            $table->foreignId('producto_ID')->nullable()->constrained('productos')->cascadeOnUpdate()->nullOnDelete();
         });
     }
 
