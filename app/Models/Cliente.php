@@ -62,5 +62,5 @@ class Cliente extends Model
         return $this->hasOne('App\Models\Ruta', 'id', 'rutas_ID');
     }
     
-
+    //protected $primaryKey = 'cli_NoDocumento';
 }

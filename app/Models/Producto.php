@@ -74,5 +74,4 @@ class Producto extends Model
         return $this->hasOne('App\Models\Proveedore', 'id', 'proveedor_ID');
     }
     
-
 }
