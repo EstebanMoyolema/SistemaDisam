@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Pedidos extends Migration
+class Detalle extends Migration
 {
     /**
      * Run the migrations.
@@ -14,25 +14,24 @@ class Pedidos extends Migration
     public function up()
     {
         //
-        Schema::create('pedidos', function (Blueprint $table) {
+        Schema::create('detalle', function (Blueprint $table) {
 
             //InnoDB permite borrar en cascada
             $table->engine="InnoDB";
 
             $table->bigIncrements('id');
-            $table->date('ped_FechaPedido');
-            $table->dateTime('updated_at');
-            $table->dateTime('created_at');
+            $table->decimal('det_Cantidad');
+            $table->float('det_Precio',4,2);
 
             //Tabla en blanco para relacion con la foreingn key
-            $table->bigInteger('cliente_ID')->unsigned();
+            $table->bigInteger('pedido_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('cliente_ID')->references('id')->on('clientes')->onDelete("cascade");
-
+            $table->foreign('pedido_ID')->references('id')->on('pedidos')->onDelete("cascade");
+            
             //Tabla en blanco para relacion con la foreingn key
-            $table->bigInteger('vendedor_ID')->unsigned();
+            $table->bigInteger('producto_ID')->unsigned();
             //Creacion de relacion entre tablas
-            $table->foreign('vendedor_ID')->references('id')->on('vendedores')->onDelete("cascade");
+            $table->foreign('producto_ID')->references('id')->on('productos')->onDelete("cascade");
 
         });
     }

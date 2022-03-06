@@ -26,7 +26,7 @@ class Clientes extends Migration
             $table->string('cli_Apellido')->nullable();
             $table->string('cli_Telefono')->nullable();
             $table->string('cli_Direccion')->nullable();
-            $table->string('cli_NombreComercial');
+            $table->string('cli_NombreComercial')->nullable();
             $table->string('cli_Email')->nullable();
             $table->dateTime('updated_at');
             $table->dateTime('created_at');

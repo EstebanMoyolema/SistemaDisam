@@ -26,7 +26,6 @@ class Proveedores extends Migration
             $table->string('prov_Email')->nullable();
             $table->string('prov_Telefono')->nullable();
             $table->string('prov_Telefono2')->nullable();
-            $table->string('prov_Telefono3')->nullable();
             $table->string('prov_RUC');
             $table->string('prov_Observacion')->nullable();
             $table->boolean('prov_Activo');
