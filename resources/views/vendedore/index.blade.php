@@ -1,27 +1,9 @@
-@section('titlePage')
-DISAM | Vendedores
-@endsection
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-        @section('opcionesMenu')
-        <x-nav-link :href="route('productos.index')" :active="request()->routeIs('productos')">
-            {{ __('Productos') }}
-        </x-nav-link>
-        <x-nav-link :href="route('categorias.index')" :active="request()->routeIs('categorias')">
-            {{ __('Categorias') }}
-        </x-nav-link>
-        <x-nav-link :href="route('proveedores.index')" :active="request()->routeIs('proveedores')">
-            {{ __('Proveedores') }}
-        </x-nav-link>
-        @endsection
-    </x-slot>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
+@extends('adminlte::page')
+@section('content_header')
+    <h1>Vendedores</h1>
+@stop
+@section('content')
+    <p>Lista de Vendedores</p>
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
@@ -30,12 +12,12 @@ DISAM | Vendedores
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Vendedore') }}
+                                {{ __('Vendedores') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('vendedores.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear Nuevo Vendedor') }}
                                 </a>
                               </div>
                         </div>
@@ -53,10 +35,10 @@ DISAM | Vendedores
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Ven Nombre</th>
-										<th>Ven Apellido</th>
-										<th>Ven Telefono</th>
-										<th>Ven Fechanacimiento</th>
+										<th>Nombres</th>
+										<th>Apellidos</th>
+										<th>Telefono</th>
+										<th>Fecha de Nacimiento</th>
 
                                         <th></th>
                                     </tr>
@@ -91,8 +73,4 @@ DISAM | Vendedores
             </div>
         </div>
     </div>
-</div>
-</div>
-</div>
-</div>
-</x-app-layout>
+    @stop
