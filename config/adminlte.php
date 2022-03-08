@@ -265,6 +265,11 @@ return [
                     'icon' => 'fas fa-fw fa-solid fa-user-plus'
                 ],
                 [
+                    'text' => 'Crear Vendedores',
+                    'url'  => '/dashboard/vendedores',
+                    'icon' => 'fas fa-fw fa-solid fa-user-plus'
+                ],
+                [
                     'text'    => 'Rutas',
                     'icon'    => 'fas fa-regular fa-route',
                     'url'  => '/dashboard/admin/rutas',
