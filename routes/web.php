@@ -4,10 +4,11 @@ use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\ClienteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\PedidoController;
+// use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\ProveedoreController;
 use App\Http\Controllers\RutaController;
+use App\Http\Controllers\VendedoreController;
 
 
 /*
@@ -45,6 +46,15 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function () {
     Route::get('/dashboard/Proveedores', [DashboardController::class, 'proveedores'])->name('admin.proveedoresDash');
     /* Ruta para redirigir al registro de pedidos desde el admin */
     Route::get('/dashboard/Pedidos', [DashboardController::class, 'pedidos'])->name('admin.pedidosDash');
+    /* Ruta para redirigir al registro de vendedores desde el admin */
+    Route::resource('/dashboard/vendedores', VendedoreController::class);
+    // Route::get('/dashboard/vendedore', [VendedoreController::class, 'index'])->name('vendedores.index');
+    // Route::get('/dashboard/vendedores/create', [VendedoreController::class, 'create'])->name('vendedores.create');
+    // Route::post('/dashboard/vendedores/', [VendedoreController::class, 'store'])->name('vendedores.store');
+    // Route::delete('dashboard/Vendedores/{Vendedore}', [VendedoreController::class, 'destroy'])->name('vendedores.destroy');
+    // Route::get('dashboard/Vendedores/{Vendedore}', [VendedoreController::class, 'show'])->name('vendedores.show');
+    // Route::get('dashboard/Vendedores/{Vendedore}/edit', [VendedoreController::class, 'edit'])->name('vendedores.edit');
+    // Route::put('dashboard/Vendedores/{Vendedore}', [VendedoreController::class, 'update'])->name('vendedores.update');
 });
 /* Ruta para redirigir al registro de rutas desde el admin */
 // Route::group(['middleware' => ['auth', 'role:administrator']], function () {
@@ -75,7 +85,7 @@ Route::group(['middleware' => ['auth', 'role:administrator']], function () {
 Route::group(['middleware' => ['auth', 'role:distribuidor']], function () {
     Route::resource('/dashboard/rutas',RutaController::class);
     Route::resource('/dashboard/clientes',ClienteController::class);
-    Route::resource('/dashboard/pedidos',PedidoController::class);
+    // Route::resource('/dashboard/pedidos',PedidoController::class);
 });
 
 /* Ruta para crear clientes y rutas desde el rol de distribuidor */
