@@ -24,6 +24,8 @@ class Vendedores extends Migration
             $table->string('ven_Apellido');
             $table->string('ven_Telefono')->nullable();
             $table->date('ven_FechaNacimiento');
+            $table->dateTime('updated_at');
+            $table->dateTime('created_at');
             
         });
     }
