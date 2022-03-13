@@ -13,9 +13,6 @@
         <x-nav-link :href="route('clientes.index')" :active="request()->routeIs('clientes')">
             {{ __('Clientes') }}
         </x-nav-link>
-        <x-nav-link :href="route('pedidos.index')" :active="request()->routeIs('pedidos')">
-            {{ __('Pedidos') }}
-        </x-nav-link>
         @endsection
     </x-slot>
 

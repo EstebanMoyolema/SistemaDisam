@@ -254,58 +254,51 @@ return [
         //     'label'       => 4,
         //     'label_color' => 'success',
         // ],
-        ['header' => 'Administrar'],
         [
-            'text'    => 'Paginas',
-            'icon'    => 'far fa-fw fa-file',
+            'text' => 'Crear Usuarios',
+            'route'  => 'auth.register',
+            'icon' => 'fas fa-fw fa-solid fa-user-plus'
+        ],
+        [
+            'text' => 'Crear Vendedores',
+            'url'  => '/dashboard/vendedores',
+            'icon' => 'fas fa-fw fa-solid fa-user-plus'
+        ],
+        [
+            'text'    => 'Rutas',
+            'icon'    => 'fas fa-regular fa-route',
+            'url'  => '/dashboard/admin/rutas',
+        ],
+        [
+            'text'    => 'Clientes',
+            'icon'    => 'fas fa-solid fa-users',
+            'url'  => '/dashboard/admin/cliente',
+        ],
+        [
+            'text'    => 'Productos',
+            'icon'    => 'fas fa-fw fa-boxes',
             'submenu' => [
                 [
-                    'text' => 'Crear Usuarios',
-                    'route'  => 'auth.register',
-                    'icon' => 'fas fa-fw fa-solid fa-user-plus'
+                    'text' => 'Categoría de productos',
+                    'icon'    => 'fas fa-fw fa-tags',
+                    'route'  => 'admin.catProductosDash',
                 ],
                 [
-                    'text' => 'Crear Vendedores',
-                    'url'  => '/dashboard/vendedores',
-                    'icon' => 'fas fa-fw fa-solid fa-user-plus'
+                    'text' => 'Productos',
+                    'icon'    => 'fas fa-fw fa-cash-register',
+                    'route'  => 'admin.productosDash',
                 ],
                 [
-                    'text'    => 'Rutas',
-                    'icon'    => 'fas fa-regular fa-route',
-                    'url'  => '/dashboard/admin/rutas',
-                ],
-                [
-                    'text'    => 'Clientes',
-                    'icon'    => 'fas fa-solid fa-users',
-                    'url'  => '/dashboard/admin/cliente',
-                ],
-                [
-                    'text'    => 'Productos',
-                    'icon'    => 'fas fa-fw fa-boxes',
-                    'submenu' => [
-                        [
-                            'text' => 'Categoría de productos',
-                            'icon'    => 'fas fa-fw fa-tags',
-                            'route'  => 'admin.catProductosDash',
-                        ],
-                        [
-                            'text' => 'Productos',
-                            'icon'    => 'fas fa-fw fa-cash-register',
-                            'route'  => 'admin.productosDash',
-                        ],
-                        [
-                            'text' => 'Proveedores',
-                            'icon'    => 'fas fa-fw fa-truck',
-                            'route'  => 'admin.proveedoresDash',
-                        ],
-                    ],
-                ],
-                [
-                    'text'    => 'Pedidos',
-                    'icon'    => 'fas fa-solid fa-receipt',
-                    'route'  => 'admin.pedidosDash',
+                    'text' => 'Proveedores',
+                    'icon'    => 'fas fa-fw fa-truck',
+                    'route'  => 'admin.proveedoresDash',
                 ],
             ],
+        ],
+        [
+            'text'    => 'Pedidos',
+            'icon'    => 'fas fa-solid fa-receipt',
+            'route'  => 'admin.pedidosDash',
         ],
         // ['header' => 'labels'],
         // [
